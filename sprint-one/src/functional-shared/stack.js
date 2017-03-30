@@ -19,12 +19,12 @@ var stackMethods = {
 	},
 	'pop': function(){
 		if (this.count > 0){
-		var popped = this[this.count];
+		var popped = this[this.count-1];
 		delete popped;
 		this.count--;
-		return this[this.count];
+		
 	}
-	
+	return popped;
 	}
 };
 

@@ -1,7 +1,7 @@
 var Stack = function() {
 	var obj = Object.create(stackMethods);
 	 obj.count = 0;
-	 obj.storage = {};
+	 // obj.storage = {};
 	return obj
 
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
@@ -13,17 +13,18 @@ var stackMethods = {
 		return this.count;
 	}, 
 	push: function (info){
-		this.storage[this.count]=info
+		this[this.count]=info
 		this.count++;
 	},
 	pop: function (){
 		if (this.count>0){
-			var fun = this.storage[this.count];
+			var fun = this[this.count-1];
 			delete fun;
 			this.count--;
-			return this.storage[this.count];
+			
 
 		}
+		return fun;
 
 	}
 };
