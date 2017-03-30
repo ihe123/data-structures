@@ -20,11 +20,14 @@ var queueMethods = {
 	'dequeue': function(){
 	if (this.count > 0){
 		var first = this.storage[0];
-		var sec = this.storage[1];
+		// var sec = this.storage[1];
 		delete first;
-		this.storage[0] = sec;
+		// this.storage[0] = sec;
+
+		for (var key in this.storage){
+			this.storage[key] = this.storage[key+1];
+		}
 		this.count--;
-		
 	}
 	return first;
 	}
