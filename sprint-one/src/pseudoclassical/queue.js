@@ -1,20 +1,22 @@
 var Queue = function() {
-    // this = Object.create(Queue.prototype);
-    // return this 
+    
 }
     Queue.prototype.count = 0;
-    Queue.prototype.push = function (val){
-        // obj[count] = val; 
-        // count++;
+    Queue.prototype.enqueue = function (val){
+        this[this.count] = val; 
+        this.count++;
     }
-    Queue.prototype.pop = function (){
-        // var popped = obj[0];
-        // delete obj[0];
-        // // for (var i = 0; ){
-
-        // // }
-        // count--;
-        // return popped;
+    Queue.prototype.dequeue = function (){
+        if (this.count>0)
+        {
+        var popped = this[0];
+        delete popped;
+        for (var i = 0; i<this.count; i++ ){
+            this[i] = this[i+1];
+        }
+        this.count--;
+        return popped;
+        }
     }
     Queue.prototype.size = function (){
         return this.count;
