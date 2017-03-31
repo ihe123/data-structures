@@ -4,10 +4,10 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
-    var node = new Node(value);
-    if(list.tail !== null){
-      var currentTail = list.tail;
-      currentTail.next = node;
+    var node = new Node(value); //new node is created with the value that is passed in
+    if(list.tail !== null){ // if list.tail exists, enter the if block
+      var currentTail = list.tail; //store that tail into currentTail
+      currentTail.next = node; //
     }
     list.tail = node;
     if(list.head === null){
@@ -27,17 +27,16 @@ var LinkedList = function() {
     var currentNode = list.head;
     while(currentNode.next !== null){
 
-    if (currentNode.value === target){
-      return true;
-       }
-      currentNode = currentNode.next;
-   
-
-
-
+      if (currentNode.value === target){
+        return true;
+      } else {
+        currentNode = currentNode.next;
+      }
     }
+    
+    return false;
   };
-
+  console.log(list)
   return list;
 };
 

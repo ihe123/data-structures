@@ -32,11 +32,13 @@ describe('linkedList', function() {
   });
 
   it('should return the value of the former head when removeHead is called', function() {
+
     linkedList.addToTail(4);
     expect(linkedList.removeHead()).to.equal(4);
   });
 
   it('should contain a value that was added', function() {
+    debugger;
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     expect(linkedList.contains(4)).to.equal(true);
