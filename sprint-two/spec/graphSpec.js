@@ -16,6 +16,7 @@ describe('graph', function() {
   });
 
   it('should store values as nodes that were inserted', function() {
+    // debugger;
     graph.addNode(1);
     expect(graph.contains(1)).to.equal(true);
   });
@@ -28,6 +29,7 @@ describe('graph', function() {
   });
 
   it('should create edges between two nodes', function() {
+    // debugger;
     graph.addNode(2);
     graph.addNode(1);
     graph.addNode(3);

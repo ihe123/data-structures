@@ -13,24 +13,32 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-	var thing = Tree(value);
-	this.children[this.children.length] = thing;
+	this.children.push(Tree(value));
+	console.log(this);
 
 	// if addChild invoked, assign newTree.children = result of addChild()
 
 };
 
-treeMethods.contains = function(target) {
-	
-		if (this.value === target){
-			return true;
-		} else {
-			for (var i = 0; i<this.children.length; i++){
-				this.contains(this.children[i]);
-			}
+treeMethods.contains = function(target, tree) {
+		tree = tree || this;
+		var thing = [];
+		// debugger;
+		if (tree.value === target){
+		 thing.push(true);
 		}
-	
-	
+		
+		for (var i = 0; i<tree.children.length; i++){
+		 thing = thing.concat(tree.contains(target, tree.children[i]));
+		}
+		
+		if (thing.indexOf(true)>-1){
+			console.log(thing)
+		return true;
+
+		} else {
+			return false;
+		}
 };
 
 
