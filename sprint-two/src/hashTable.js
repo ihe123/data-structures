@@ -24,14 +24,14 @@ HashTable.prototype.remove = function(k) {
   console.log(index)
   console.log(this._storage);
   console.log(this)
-  
+  this._storage.set(index, undefined);
   // var arrayOfKeys = Object.keys(this._storage)
  
-  this._storage.each(function(val){
-  	if (val[index] === k){
-  		delete val[index];
-  	}
-  });
+  // this._storage.each(function(val){
+  // 	if (val[index] === k){
+  // 		delete val[index];
+  // 	}
+  // });
   // for (var i = 0; i<arrayOfKeys.length; i++){
   // 	if(this[arrayOfKeys[i]] === k){
 
