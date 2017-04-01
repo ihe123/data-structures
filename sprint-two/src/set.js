@@ -20,13 +20,6 @@ setPrototype.contains = function(item) {
 	};
 	return result;
 }
-// 	for (var i = 0; i<thing.length; i++){
-// 		if (thing[i]===item){
-// 			return true;
-// 		}
-// 	}
-// 	return false;
-// };
 
 setPrototype.remove = function(item) {
 
